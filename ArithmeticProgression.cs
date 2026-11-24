@@ -45,8 +45,6 @@ namespace LR_2
             get { return d; }
             set { d = value; }
         }
-
-        // Властивість тільки для читання: вид прогресії
         public string Kind
         {
             get
