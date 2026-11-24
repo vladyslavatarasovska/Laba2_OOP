@@ -2,14 +2,7 @@
 {
     partial class Form1
     {
-        /// <summary>
-        /// Обов'язкова змінна конструктора.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Звільнення всіх ресурсів, що використовуються.
-        /// </summary>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -18,9 +11,7 @@
             }
             base.Dispose(disposing);
         }
-
         #region Код, автоматично створений конструктором форм Windows
-
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
