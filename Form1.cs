@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Forms;
-
 namespace LR_2
 {
     public partial class Form1 : Form
@@ -10,16 +9,12 @@ namespace LR_2
         {
             InitializeComponent();
         }
-
-        // Підготовка рядка: прибирає пробіли, замінює різні види мінуса та кому
         private string Normalize(TextBox tb)
         {
             return tb.Text.Replace(" ", "").Replace(" ", "")
                           .Replace('−', '-').Replace('–', '-').Replace('—', '-')
                           .Replace(',', '.');
         }
-
-        // Зчитування дійсного числа
         private double ReadDouble(TextBox tb, string name)
         {
             double value;
@@ -27,8 +22,6 @@ namespace LR_2
                 throw new FormatException("Некоректне значення поля \"" + name + "\"");
             return value;
         }
-
-        // Зчитування цілого числа
         private int ReadInt(TextBox tb, string name)
         {
             int value;
@@ -36,8 +29,6 @@ namespace LR_2
                 throw new FormatException("Поле \"" + name + "\" повинно містити ціле число");
             return value;
         }
-
-        // Виведення характеристик об'єкта у відповідну групу
         private void ShowResult(ArithmeticProgression p, int n,
             Label lA1, Label lD, Label lKind, Label lTerms, Label lTerm, Label lSum)
         {
@@ -48,7 +39,6 @@ namespace LR_2
             lTerm.Text = n + "-й член: " + Math.Round(p.Term(n), 4);
             lSum.Text = "Сума " + n + " перших членів: " + Math.Round(p.Sum(n), 4);
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             ArithmeticProgression p1, p2, p3;
@@ -80,8 +70,6 @@ namespace LR_2
                 MessageBox.Show("Помилка введення даних!\n" + ex.Message, "Помилка");
             }
         }
-
-        // Очищення полів введення та результатів
         private void button2_Click(object sender, EventArgs e)
         {
             foreach (TextBox tb in new TextBox[] { textBox1, textBox2, textBox3, textBox4, textBox5, textBox6, textBox7 })
